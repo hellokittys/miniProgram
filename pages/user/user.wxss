@@ -1,0 +1,22 @@
+/* pages/user/user.wxss */
+@import "../common/lib/weui.wxss";
+
+form{
+  width:100%;
+}
+.page-section:last-child {
+  margin-bottom: 0;
+}
+
+.page-section {
+  width: 100%;
+  margin-bottom: 60rpx;
+}
+
+.btn-area {
+ margin-top:60rpx;
+box-sizing:border-box;
+width:100%;
+padding:0 30rpx;
+
+}

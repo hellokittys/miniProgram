@@ -1,6 +1,5 @@
 //index.js
-//获取应用实例
-//全局的 getApp() 函数可以用来获取到小程序 App 实例
+//获取应用实例全局的 getApp() 函数可以用来获取到小程序 App 实例
 const app = getApp()
 
 Page({
@@ -77,8 +76,7 @@ Page({
     })
   },
   onLoad: function(options) {
-    console.log(options);
-    console.log("index----------onLoad");
+    console.log(options);  
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -107,16 +105,16 @@ Page({
     }
   },
   onReady: function() {
-    console.log("index----------onReady");
+ 
   },
   onShow: function() {
-    console.log("index----------onShow");
+   
   },
   onHide: function() {
-    console.log("index----------onHide");
+   
   },
   onUnload: function() {
-    console.log("index----------onUnload");
+    
   },
   getUserInfo: function(e) {
     console.log(e)

@@ -1,0 +1,52 @@
+<view class="container">
+  <!-- <template is="head" data="{{title: '个人信息'}}"/> -->
+  <!-- 当点击 <form/> 表单中 formType 为 submit 的 <button/> 组件时，会将表单组件中的 value 值进行提交，需要在表单组件中加上 name 来作为 key。 
+report-submit是否返回 formId 用于发送模板消息-->
+  <form class="page-body" bindsubmit="submitForm" report-submit="true">
+    <view class="weui-cells__title">个人信息</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">姓名</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="text" name="year"></input>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">年龄
+          </view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="text" value="{{formData.serial}}" name="serial"></input>
+        </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">出生日期</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+            <view class="weui-input">{{date}}</view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">地区</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="text" name="localPlace"></input>
+        </view>
+      </view>
+    </view>
+    <view class="btn-area">
+      <button type="primary" size="40" formType="submit" loading="{{loading}}">保存</button>
+      <button type="defualt" formType="reset">重置</button>
+    </view>
+  </form>
+  <!-- <template is="foot" /> -->
+</view>

@@ -3,8 +3,6 @@
   "navigationBarTextStyle": "black",
   "navigationBarTitleText": "小程序首页",
   "backgroundColor": "#eeeeee",
-  "backgroundTextStyle": "light",
-  "enablePullDownRefresh": true,
-  "onReachBottomDistance": 50,
-  "disableScroll": false
+  "backgroundTextStyle": "light" 
+ 
 }

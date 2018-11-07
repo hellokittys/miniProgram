@@ -1,15 +1,19 @@
 <view>
   <swiper indicator-dots="{{banner.indicatorDots}}" class="banners" autoplay="{{banner.autoplay}}" interval="{{banner.interval}}" duration="{{banner.duration}}">
     <block wx:for="{{banner.imgList}}">
-      <swiper-item class="banner">
-        <image src="{{item.image}}" data-id="{{item.id}}" bindtap="bindViewTap" class="banner-image" width="100%" height="100%" />
-        <text class="banner-title">{{item.title}}</text>
-      </swiper-item>
+      <navigator url='../detail/detail?id={{item.id}}'>
+        <swiper-item class="banner">
+          <image src="{{item.image}}" data-id="{{item.id}}" bindtap="bindViewTap" class="banner-image" width="100%" height="100%" />
+          <text class="banner-title">{{item.title}}</text>
+        </swiper-item>
+      </navigator>
     </block>
   </swiper>
   <!-- <template is="bannerInfo" data="{{...banner}}"></template> -->
   <view class="news-item-container">
-    <block wx:for="{{list}}" wx:for-index="id">
+    <!-- 给index和item取别名 id和item -->
+    <!-- block标签等于{} -->
+    <block wx:for="{{list}}" wx:for-index="id" wx:for-item="item">
       <text wx:if="{{item.header}}" class="sub-title">{{item.header}}</text>
       <navigator wx:else url="../detail/detail?id={{item.id}}">
         <view class="news-item">

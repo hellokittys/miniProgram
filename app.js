@@ -5,8 +5,7 @@ App({
     //小程序初始化完成时（全局只触发一次）
     //https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/app.html#onlaunchobject
     console.log(obj);
-    this.getSys()
-
+    this.getSystemInfo()
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -42,11 +41,11 @@ App({
     })
   },
   //获取手机信息
-  getSys: function () {
+  getSystemInfo: function() {
     var that = this;
     //  这里要非常注意，微信的scroll-view必须要设置高度才能监听滚动事件，所以，需要在页面的onLoad事件中给scroll-view的高度赋值
     wx.getSystemInfo({
-      success: function (res) {
+      success: function(res) {
         console.log(res.model)
         console.log(res.pixelRatio)
         console.log(res.windowWidth)
@@ -60,7 +59,7 @@ App({
         that.globalData.windowH = res.windowHeight;
       }
     })
-  }, 
+  },
   onShow: function(obj) {
     //小程序启动，或从后台进入前台显示时
     //https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/app.html#onshowobject
