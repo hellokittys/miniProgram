@@ -1,0 +1,4 @@
+<template name="footer">
+  <view>{{msg}}</view>
+  <view> {{path}}</view>
+</template>

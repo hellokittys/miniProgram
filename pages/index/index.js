@@ -4,10 +4,10 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    footerInfo: {msg:"底部模板",path:'../commom/footer.wxml'}
   },
   //事件处理函数
   bindViewTap: function() {
@@ -76,7 +76,8 @@ Page({
     })
   },
   onLoad: function(options) {
-    console.log(options);  
+    console.log(options);
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -105,23 +106,24 @@ Page({
     }
   },
   onReady: function() {
- 
+
   },
   onShow: function() {
-   
+
   },
   onHide: function() {
-   
+
   },
   onUnload: function() {
-    
+
   },
   getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+    // console.log(e)
+    // app.globalData.userInfo = e.detail.userInfo
+    // this.setData({
+    //   userInfo: e.detail.userInfo,
+    //   hasUserInfo: true
+    // })
+    app.getUserInfo()
   }
 })

@@ -1,3 +1,5 @@
+var utils = require('../../utils/util.js')
+
 const app = getApp()
 Page({
 
@@ -5,7 +7,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    startDate: utils.curentTime(),
+    endDate: utils.curentTime(),
+    array: ['群众', '团员', '共产党员' ],
+    index: 0,
+    region: ["四川省", "攀枝花市", "米易县"]
   },
 
   /**
@@ -71,8 +77,11 @@ Page({
     console.log(item.pagePath)
     console.log(item.text)
   },
-  submitForm() {
+  submitForm(e) {
     var that = this;
+    console.log(e.detail.value)
+
+
     wx.showModal({
       title: '提交信息',
       content: '确定提交信息吗？',
@@ -105,6 +114,18 @@ Page({
     this.setData({
       date: e.detail.value
     })
-    
+
+  },
+  bindPickerChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
+    })
+  },
+  bindRegionChange: function(e) {
+    console.log('picker发送选择改变，携带值为',e)
+     this.setData({
+      region: e.detail.value
+    })
   }
 })

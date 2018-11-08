@@ -27,7 +27,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-   
+
   },
 
   /**
@@ -88,13 +88,16 @@ Page({
         'Content-Type': 'application/json'
       },
       success(res) {
-        wx.hideLoading()
+
         that.setData({
           "banner.imgList": res.data.top_stories,
           list: [{
             header: '今日热闻'
           }].concat(res.data.stories)
         })
+      },
+      complete(res) {
+        wx.hideLoading()
       }
     })
     this.index = 1
